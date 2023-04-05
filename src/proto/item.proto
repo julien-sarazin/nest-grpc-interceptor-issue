@@ -1,0 +1,22 @@
+// hero/hero.proto
+syntax = "proto3";
+
+package item;
+
+service ItemService {
+  rpc First (ItemById) returns (ItemResponse) {}
+}
+
+message ItemById {
+  int32 id = 1;
+}
+
+message Item {
+  string foo = 1;
+  string bar = 2;
+  int64 date = 3;
+}
+
+message ItemResponse {
+  optional Item item = 1;
+}
